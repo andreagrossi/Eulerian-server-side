@@ -72,7 +72,7 @@ La longueur de l'URL encodée dans son intégralité ne doit pas dépasser 8000 
 
 Pour empêcher la mise en cache des requêtes GET, vous pouvez inclure une valeur **CACHE_BUSTER** en tant que dernière valeur de chemin dans l'URL ou en tant que paramètre GET via **ea-rnd**. Cela garantit que la requête n'est pas extraite de la mise en cache et est envoyée à Eulerian.
 
-#### Codes de réponse
+#### Code de réponse
 
 Lorsque vous envoyez des données avec Eulerian server-side, Eulerian répondra avec des codes d'état HTTP. Un code d'état 2xx indique que la requête a été reçue avec succès. Cependant, Eulerian ne renvoie pas de code d'erreur pour des données de charge utile mal formées ou incorrectes. Si vous ne recevez pas un code d'état 2xx, vous devez résoudre tout problème avec votre requête HTTP.
 
