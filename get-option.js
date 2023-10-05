@@ -1,27 +1,33 @@
-// Define the parameters you want to pass
+// Define the user identification parameters
+const userParameters = {
+  euidl: 'current_device_id', // This pseudonymously identifies a particular user, device, or browser instance. You cannot provide the etuix as a value here.
+  uid: 'your_customer_id', // This is intended to be a known identifier for a user provided by the site owner/library user.
+  etagid: 'etagid_for_this_tag', // Id of the tag is declared in the Tag Management interface for debugging purposes
+};
+
+// Define the parameters you want to pass in the GET request
 const parameters = {
   parameter1: 'value1',
   parameter2: 'value2',
+  // Add other parameters here
 };
 
 // Add the CACHE_BUSTER value as the last path value
-// This modification ensures that the cache is bypassed.
 const cacheBusterValue = 'CACHE_BUSTER_VALUE'; // Replace with your actual cache buster value
 
 // Convert the parameters into a query string
-const queryString = new URLSearchParams(parameters).toString();
+const queryString = new URLSearchParams({ ...userParameters, ...parameters }).toString();
 
-// Append the cache buster to the URL path
+// URL of the destination endpoint with cache buster and query string
 //tracking hostname : your tracking sub domain
 //type : collector
 //website name : your website name
 const url = `https://TRACKING_HOSTNAME/TYPE/WEBSITE_NAME/${cacheBusterValue}?${queryString}`;
 
-// Options for the GET request
-// Make sure to replace with your desired User-Agent string. This header is optional and allows you to specify the user agent for your requests.
+// Options for the GET request with User-Agent
 const options = {
   headers: {
-    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0',
+    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0', // User-Agent header
   },
 };
 
@@ -34,4 +40,3 @@ fetch(url, options)
   .catch(error => {
     console.error('Error:', error);
   });
-}
