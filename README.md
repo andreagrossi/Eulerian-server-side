@@ -85,3 +85,7 @@ Exemple de charge utile :
 `key1=val1&key2=val2`
 
 Chaque paramètre dans la charge utile a des règles spécifiques concernant les valeurs requises, l'encodage URI, les combinaisons de paramètres et la longueur. Il est essentiel de respecter ces règles lors de la construction de votre charge utile.
+
+## Site centric tracking
+Complete list of alla parameters you can use are here
+https://doc.api.eulerian.com/#section/Eulerian-Measurement-Protocol/Protocol-Reference
