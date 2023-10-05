@@ -34,9 +34,9 @@ const cacheBusterValue = 'CACHE_BUSTER_VALUE'; // Replace with your actual cache
 const queryString = new URLSearchParams(combinedParameters).toString();
 
 // URL of the destination endpoint with cache buster and query string
-//tracking hostname : your tracking sub domain
-//type : collector
-//website name : your website name
+//TRACKING_HOSTNAME : your tracking sub domain
+//TYPE : collector
+//WEBSITE_NAME : your website name in eulerian environnement
 const url = `https://TRACKING_HOSTNAME/TYPE/WEBSITE_NAME/${cacheBusterValue}?${queryString}`;
 
 // Options for the GET request with User-Agent
